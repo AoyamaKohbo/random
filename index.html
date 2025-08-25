@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+
+  <head>
+    <script type="text/x-mathjax-config">
+
+       MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}});
+
+    </script>
+
+    <script type="text/javascript" async 
+
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+
+  </head>
+
+<body>
+  <h3>乱数によるランダム信号の生成</h3>
+  <h3>§乱数の生成</h3>
+
+  <p>ランダム信号は広い範囲の周波数成分を含んでいるので、
+    運動制御システムにおいてランダム信号を入力とすると、
+    広い範囲周波数範囲の応答を確認することに重宝します。</p>
+  <p>C言語には0からRAND_MAXの範囲の疑似乱数を生成する関数(rand)があります。書式は下記となります。</p>
+  <p>int rand(void);</p>
+  <p>float x,y;</p>
+  <p>y=((float)rand()/RAND_MAX-0.5f)\(*\)x</p>
+  <p>とすることで、\(-0.5x\)から\(+0.5x\)の疑似乱数を浮動小数\(y\)としてランダム信号を生成できます。</p>
+
+  <p>下図は\(-0.5\)から\(+0.5\)の範囲で生成した１万個のランダム信号です。</p>
+
+  <img src="urnd.jpg" width=600px>
+
+  <p>下図はランダム信号の確立分布です。
+    ほぼ均等な確率で変位が発生していることを確認できます。</p>
+
+  <img src="urnd_dst.jpg" width=600px>
+
+  <p>下図はランダム信号をFourie変換して作成された周波数分布です。
+    \(0\)～\(100\)[Hz]までほぼ均等に振幅が発生していることを確認できます。</p>
+
+  <img src="urnd_fft.jpg" width=600px>
+
+  <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
+</body>
+
+</html>
