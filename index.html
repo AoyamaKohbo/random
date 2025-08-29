@@ -39,10 +39,21 @@
 
   <img src="urnd_dst.jpg" width=600px>
 
-  <p>下図はランダム信号をFourie変換して作成された周波数分布です。
+  <p>下図はランダム信号を<a href="https://aoyamakohbo.github.io/Fourier/">Fourie変換</a>して作成された周波数分布です。
     \(0\)～\(100\)[Hz]までほぼ均等に振幅が発生していることを確認できます。</p>
 
   <img src="urnd_fft.jpg" width=600px>
+
+  <p>モデル規範適応制御において、
+    振動数の高い成分は適応動作を遅くさせるか、
+    不安定化させることが懸念されます。
+    そこで、<a href="https://aoyamakohbo.github.io/DgtFltr/">デジタルフィルター</a>により
+    20Hz以上の振動数成分を抑制します。
+    下図はランダム信号に遮断周波数20Hzの低域通過デジタルフィルターを使用し、
+    <a href="https://aoyamakohbo.github.io/Fourier/">Fourie変換</a>して作成された周波数分布です。
+    ランダム振動に対して20Hz以上の振動数成分が抑制されていることを確認できます。</p>
+
+  <img src="urnd_flt20Hz_fft.jpg" width=600px>  
 
   <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
 </body>
